@@ -1,13 +1,13 @@
 [
-    {
-      "id": 1,
-      "vehicles": [
-        "Motocicleta",
-        "Carro",
-        "Caminhão"
-      ],
-      "kmTraveled": 10000,
-      "from": "2009-01-01",
-      "to": "2022-02-02"
-    }
-  ]
+  {
+    "id": 1,
+    "vehicles": [
+      "Motocicleta",
+      "Carro",
+      "Caminhão"
+    ],
+    "kmTraveled": 10000,
+    "from": "2009-01-01",
+    "to": "2022-02-02"
+  }
+]
