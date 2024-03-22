@@ -6,20 +6,48 @@
   "type": "module",
   "scripts": {
     "dev": "npx nodemon --ignore database.json --exec node --experimental-json-modules src/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha --require @babel/register ./test/*.test.js",
+    "test:cov": "npx nyc npx mocha --require @babel/register --parallel test/*.test.js",
+    "test:jest": "jest",
+    "test:jest:cov": "jest --coverage"
   },
+  "nyc": {
+    "require": [
+      "@babel/register"
+    ],
+    "reporter": [
+      "lcov",
+      "text"
+    ],
+    "sourceMap": true,
+    "instrument": true,
+    "all": true,
+    "include": [
+      "src/person.js"
+    ],
+    "extension": [
+      ".js"
+    ]
+},
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "engines": {
-    "node": "14.3+"
-  },
   "dependencies": {
     "chalk": "^5.3.0",
     "chalk-table": "^1.0.2",
-    "draftlog": "^1.0.13"
+    "draftlog": "^1.0.13",
+    "reify": "^0.20.12"
   },
   "devDependencies": {
-    "nodemon": "^3.1.0"
+    "@babel/core": "^7.24.3",
+    "@babel/plugin-syntax-import-attributes": "^7.24.1",
+    "@babel/preset-env": "^7.24.3",
+    "@babel/register": "^7.23.7",
+    "chai": "^5.1.0",
+    "jest": "^27.2.5", 
+    "mocha": "^10.3.0",
+    "nodemon": "^3.1.0",
+    "nyc": "^15.1.0",
+    "sinon": "^17.0.1"
   }
 }
