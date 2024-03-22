@@ -14,13 +14,17 @@ export default class Person {
         }
         return {
             id: Number(this.id),
-            vehicles: new Intl.ListFormat(language, { style: "long", type: "conjunction" })
+            vehicles: new Intl
+                .ListFormat(language, { style: 'long', type: 'conjunction' })
                 .format(this.vehicles),
-            kmTraveled: new Intl.NumberFormat(language, { style: "unit", unit: "kilometer" })
+            kmTraveled: new Intl
+                .NumberFormat(language, { style: 'unit', unit: 'kilometer' })
                 .format(this.kmTraveled),
-            from: new Intl.DateTimeFormat(language, { month: "long", day: "2-digit", year: "numeric" })
+            from: new Intl
+                .DateTimeFormat(language, { month: 'long', day: '2-digit', year: 'numeric' })
                 .format(mapDate(this.from)),
-            to: new Intl.DateTimeFormat(language, { month: "long", day: "2-digit", year: "numeric" })
+            to: new Intl
+                .DateTimeFormat(language, { month: 'long', day: '2-digit', year: 'numeric' })
                 .format(mapDate(this.to))
         }
     }
@@ -29,8 +33,8 @@ export default class Person {
         const EMPTY_SPACE = ' '
         const [id, vehicles, kmTraveled, from, to] = text.split(EMPTY_SPACE)
         const person = new Person({
-            id,
-            kmTraveled,
+            id: Number(id),
+            kmTraveled: Number(kmTraveled),
             from,
             to,
             vehicles: vehicles.split(','),

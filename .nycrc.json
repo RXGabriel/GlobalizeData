@@ -1,9 +1,8 @@
 {
-  "nyc": {
-    "reporter": ["json-summary"],
-    "report-dir": "coverage",
-    "all": true,
-    "per-file": true,
-    "branches": 100
-  }
+  "branches": 100,
+  "lines": 100,
+  "functions": 100,
+  "statements": 100,
+  "checkCoverage": true,
+  "reporter": ["html", "text"]
 }

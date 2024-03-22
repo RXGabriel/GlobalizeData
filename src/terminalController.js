@@ -16,7 +16,7 @@ export default class TerminalController {
         this.terminal = readline.Interface({
             input: process.stdin,
             output: process.stdout
-        });
+        })
 
         this.initializeTable(database, language)
     }
@@ -32,7 +32,6 @@ export default class TerminalController {
     updateTable(item) {
         this.data.push(item)
         this.print(chalkTable(this.getTableOptions(), this.data))
-
     }
 
     question(msg = 'What\'\s your name?') {
@@ -53,6 +52,6 @@ export default class TerminalController {
                 { field: 'from', name: chalk.greenBright('From') },
                 { field: 'to', name: chalk.yellowBright('To') }
             ]
-        };
+        }
     }
 }

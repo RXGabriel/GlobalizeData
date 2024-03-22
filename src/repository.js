@@ -1,7 +1,8 @@
 import { writeFile, readFile } from 'fs/promises';
 
 export const save = async (data) => {
-    const { pathname: databaseFile } = new URL('./../database.json', import.meta.url);
+    const url = 'C:\\Node-Programns\\JSExpert\\ProjetoFInal\\InternacionalizaçãoDeDados\\database.json'
+    const { pathname: databaseFile } = new URL(url, import.meta.url);
     const currentData = JSON.parse((await readFile(databaseFile)));
     currentData.push(data);
 

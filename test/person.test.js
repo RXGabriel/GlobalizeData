@@ -1,12 +1,11 @@
 import mocha from 'mocha'
 const { describe, it } = mocha
-
-import * as chai from 'chai'
+import chai from 'chai'
 const { expect } = chai
 
 import Person from '../src/person.js'
 
-describe("Person", () => {
+describe('Person', () => {
     it('should return a person instance from a string', () => {
         const person = Person.generateInstanceFromString(
             '1 Bike,Carro 20000 2020-10-31 2022-10-31'
@@ -16,13 +15,13 @@ describe("Person", () => {
             from: '2020-10-31',
             to: '2022-10-31',
             vehicles: ['Bike', 'Carro'],
-            kmTraveled: '20000',
-            id: '1'
+            id: 1,
+            kmTraveled: 20000
         }
         expect(person).to.be.deep.equal(expected)
     })
 
-    it('should return a formatted value', () => {
+    it('should format values', () => {
         const person = new Person({
             from: '2020-10-31',
             to: '2022-10-31',
